@@ -1,0 +1,40 @@
+Service:
+  RegionId: cn-hangzhou
+  DeployType: ros
+  DeployMetadata:
+    ServiceInstanceNameRule:
+      Prefix: wp
+    SupplierDeployMetadata:
+      FileArtifactRelation:
+        '{{ computenest::file::wordpress }}':
+          ArtifactId: ${Artifact.Artifact_1.ArtifactId}
+          ArtifactVersion: ${Artifact.Artifact_1.ArtifactVersion}
+    TemplateConfigs:
+      - Name: 单机版
+        Url: 'templates/template.yaml'
+        AllowedRegions:
+          - cn-beijing
+          - cn-hangzhou
+          - cn-shanghai
+      - Name: 高可用版
+        Url: 'templates/cluster.yaml'
+        AllowedRegions:
+          - cn-beijing
+          - cn-hangzhou
+          - cn-shanghai
+  ServiceType: private
+  ServiceInfo:
+    Locale: zh-CN
+    ShortDescription: wordpress demo
+    Image: 'icons/service_logo.png'
+    Name: WordPress-tfsg
+  ShareType: Public
+  ApprovalType: Manual
+Artifact:
+  Artifact_1:
+    ArtifactType: File
+    ArtifactName: WordPress
+    Description: WordPress
+    ArtifactProperty:
+      RegionId: cn-hangzhou
+      Url: 'artifacts/wordpress-6.2-zh_CN.tar.gz'
