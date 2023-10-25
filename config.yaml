@@ -27,7 +27,7 @@ Service:
     Locale: zh-CN
     ShortDescription: wordpress demo
     Image: 'icons/service_logo.png'
-    Name: WordPress-tfsg
+    Name: WordPress
   ShareType: Public
   ApprovalType: Manual
 Artifact:
