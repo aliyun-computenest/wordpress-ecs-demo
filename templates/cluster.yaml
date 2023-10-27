@@ -453,7 +453,7 @@ Resources:
 
 
             # 安装wordPress
-            wget '{{ computenest::file::wordpress }}'
+            wget '{{ computenest::file::wordpress }}' -O wordpress-6.2-zh_CN.tar.gz
             tar -xvf wordpress-6.2-zh_CN.tar.gz
             cp wordpress/wp-config-sample.php wordpress/backup-wp-config.php
             sed -i 's/database_name_here/${DBName}/' wordpress/wp-config-sample.php
