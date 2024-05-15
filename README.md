@@ -7,7 +7,7 @@
 │   └── index.md
 ├── resources                                       - 服务资源文件
 │   ├── icons
-│   │   └── logo.png                                - 服务logo
+│   │   └── service_logo.png                        - 服务logo
 │   └── artifact_resources                          - 部署物相关资源文件
 │       └── file                                    - 文件部署物目录
 │           ├── epel-release-latest-7.noarch.rpm    - epel安装包
