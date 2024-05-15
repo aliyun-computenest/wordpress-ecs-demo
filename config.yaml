@@ -3,7 +3,7 @@ Service:
   DeployType: ros
   DeployMetadata:
     ServiceInstanceNameRule:
-      Prefix: wp
+      Prefix: wp-
     SupplierDeployMetadata:
       FileArtifactRelation:
         '{{ computenest::file::wordpress }}':
@@ -11,13 +11,13 @@ Service:
           ArtifactVersion: ${Artifact.Artifact_1.ArtifactVersion}
     TemplateConfigs:
       - Name: 单机版
-        Url: 'templates/template.yaml'
+        Url: 'ros_templates/template.yaml'
         AllowedRegions:
           - cn-beijing
           - cn-hangzhou
           - cn-shanghai
       - Name: 高可用版
-        Url: 'templates/cluster.yaml'
+        Url: 'ros_templates/cluster.yaml'
         AllowedRegions:
           - cn-beijing
           - cn-hangzhou
@@ -26,7 +26,7 @@ Service:
   ServiceInfo:
     Locale: zh-CN
     ShortDescription: wordpress demo
-    Image: 'icons/service_logo.png'
+    Image: 'resources/icons/service_logo.png'
     Name: WordPress
   ShareType: Public
   ApprovalType: Manual
@@ -37,4 +37,4 @@ Artifact:
     Description: WordPress
     ArtifactProperty:
       RegionId: cn-hangzhou
-      Url: 'artifacts/wordpress-6.2-zh_CN.tar.gz'
+      Url: 'resources/artifact_resources/file/wordpress-6.2-zh_CN.tar.gz'
