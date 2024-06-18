@@ -1,0 +1,36 @@
+Service:
+  RegionId: ap-southeast-1
+  DeployType: ros
+  DeployMetadata:
+    ServiceInstanceNameRule:
+      Prefix: wp-
+    SupplierDeployMetadata:
+      FileArtifactRelation:
+        '{{ computenest::file::wordpress }}':
+          ArtifactId: ${Artifact.Artifact_1.ArtifactId}
+          ArtifactVersion: ${Artifact.Artifact_1.ArtifactVersion}
+    TemplateConfigs:
+      - Name: 单机版
+        Url: 'ros_templates/template.yaml'
+        AllowedRegions:
+          - ap-southeast-1
+      - Name: 高可用版
+        Url: 'ros_templates/cluster.yaml'
+        AllowedRegions:
+          - ap-southeast-1
+  ServiceType: private
+  ServiceInfo:
+    Locale: zh-CN
+    ShortDescription: wordpress demo
+    Image: 'resources/icons/service_logo.png'
+    Name: WordPress
+  ShareType: Public
+  ApprovalType: Manual
+Artifact:
+  Artifact_1:
+    ArtifactType: File
+    ArtifactName: WordPress
+    Description: WordPress
+    ArtifactProperty:
+      RegionId: ap-southeast-1
+      Url: 'resources/artifact_resources/file/wordpress-6.2-zh_CN.tar.gz'
