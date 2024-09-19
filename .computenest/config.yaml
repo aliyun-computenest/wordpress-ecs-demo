@@ -12,12 +12,14 @@ Service:
     TemplateConfigs:
       - Name: 单机版
         Url: 'ros_templates/template.yaml'
+        ArchitectureDiagramUrl: 'docs/architecture_1.png'
         AllowedRegions:
           - cn-beijing
           - cn-hangzhou
           - cn-shanghai
       - Name: 高可用版
         Url: 'ros_templates/cluster.yaml'
+        ArchitectureDiagramUrl: 'docs/architecture_2.png'
         AllowedRegions:
           - cn-beijing
           - cn-hangzhou
